@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react'; 
 import { Canvas } from '@react-three/fiber';
 import { useGLTF, OrbitControls } from '@react-three/drei';
 
@@ -27,6 +27,72 @@ const Model: React.FC = () => {
 };
 
 const LandingPage: React.FC = () => {
+  // Inject responsive CSS once on mount
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.innerHTML = `
+      /* Navigation */
+      nav {
+        flex-wrap: wrap;
+      }
+      nav > div {
+        flex: 1 1 auto;
+      }
+      nav a {
+        margin-top: 8px;
+        margin-left: auto;
+      }
+
+      /* Responsive text sizing and padding */
+      @media (max-width: 768px) {
+        section {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+        }
+        h1 {
+          font-size: 2rem !important;
+        }
+        h2 {
+          font-size: 1.5rem !important;
+        }
+        h3 {
+          font-size: 1.25rem !important;
+        }
+        p {
+          font-size: 1rem !important;
+        }
+        button {
+          max-width: 100% !important;
+          width: auto !important;
+          padding: 1rem 2rem !important;
+          font-size: 1.1rem !important;
+        }
+      }
+
+      /* Canvas size on smaller screens */
+      @media (max-width: 480px) {
+        .canvas-container {
+          height: 200px !important;
+          max-width: 100% !important;
+        }
+      }
+
+      /* Footer style */
+      footer {
+        text-align: center;
+        padding: 1rem;
+        background-color: #f0f0f0;
+        color: #666;
+        font-size: 0.9rem;
+        margin-top: 2rem;
+      }
+    `;
+    document.head.appendChild(style);
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
   return (
     <main
       style={{
@@ -119,6 +185,7 @@ const LandingPage: React.FC = () => {
         </p>
 
         <div
+          className="canvas-container"
           style={{
             width: '100%',
             maxWidth: '600px',
@@ -156,7 +223,7 @@ const LandingPage: React.FC = () => {
           The Problem
         </h2>
         <p style={{ marginBottom: '2rem', lineHeight: '1.6' }}>
-          Many buyers and sellers in their 20s–30s are frustrated with not being able to fully inspect items online before buying. Repetitive
+          Many buyers and sellers are frustrated with not being able to fully inspect items online before buying. Repetitive
           requests for more photos or videos often waste time and discourage both sides.
         </p>
 
@@ -227,6 +294,11 @@ const LandingPage: React.FC = () => {
           Get Started
         </button>
       </section>
+
+      {/* Footer */}
+      <footer>
+        &copy; {new Date().getFullYear()} NuEwa Tech
+      </footer>
     </main>
   );
 };
