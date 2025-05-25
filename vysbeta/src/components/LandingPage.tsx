@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'; 
 import { Canvas } from '@react-three/fiber';
 import { useGLTF, OrbitControls } from '@react-three/drei';
+import { Link } from 'react-router-dom';
 
 const ShoppingCartIcon = () => (
   <svg
@@ -266,6 +267,7 @@ const LandingPage: React.FC = () => {
         >
           Ready to explore items in 3D?
         </h3>
+        <Link to="/survey">
         <button
           style={{
             backgroundColor: 'white',
@@ -293,6 +295,7 @@ const LandingPage: React.FC = () => {
         >
           Get Started
         </button>
+        </Link>
       </section>
 
       {/* Footer */}
