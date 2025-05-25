@@ -7,7 +7,7 @@ const products = [
   {
     videoPath: '/assets/videos/accent-chair.mp4',
     imagePath: '/images/accent-fv-angle.jpg',
-    thumbnails: ['/images/accent-fl.jpg', '/images/accent-fs-angle.jpg'],
+    thumbnails: ['/images/accent-fl.jpg', '/images/accent-fs-angle.jpg', '/images/ac-back.jpg'],
     description: 'This is a great survey tool for field data.',
     price: '50',
   },
@@ -21,21 +21,21 @@ const products = [
   {
     videoPath: '/assets/videos/puma-shoe.mp4',
     imagePath: '/images/ps-fv.jpg',
-    thumbnails: ['/images/shoe-l-side.jpg', '/images/shoe-side.jpg'],
+    thumbnails: ['/images/shoe-l-side.jpg', '/images/shoe-side.jpg', '/images/ps-pair.jpg'],
     description: 'Lightweight and high precision.',
     price: '45',
   },
   {
     videoPath: '/assets/videos/wooden-chair.mp4',
     imagePath: '/images/dc-fs.jpg',
-    thumbnails: ['/images/dc-b.jpg', '/images/dc-lv.jpg'],
+    thumbnails: ['/images/dc-b.jpg', '/images/dc-lv.jpg', '/images/dc-back.jpg'],
     description: 'Ideal for topographic surveys.',
     price: '70',
   },
   {
     videoPath: '/assets/videos/stool-chair.mp4',
     imagePath: '/images/bar-fs.jpg',
-    thumbnails: ['/images/bar-cushion.jpg', '/images/bc-s.jpg'],
+    thumbnails: ['/images/bar-cushion.jpg', '/images/bc-s.jpg', '/images/bc-fv.jpg'],
     description: 'User-friendly with advanced features.',
     price: '60',
   },
