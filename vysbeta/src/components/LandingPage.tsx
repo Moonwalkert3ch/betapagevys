@@ -172,7 +172,7 @@ const LandingPage: React.FC = () => {
             lineHeight: 1.2,
           }}
         >
-          Welcome to VYS
+          Welcome to our Beta Solution Page
         </h1>
         <p
           style={{
@@ -182,7 +182,7 @@ const LandingPage: React.FC = () => {
             lineHeight: 1.5,
           }}
         >
-          A Virtual Yard Sale platform to explore secondhand items like never before — in 3D and VR!
+          We are testing ways to explore secondhand items like never before — in 3D and VR! And we want <strong>YOUR</strong> opinion!
         </p>
 
         <div
@@ -265,7 +265,7 @@ const LandingPage: React.FC = () => {
             marginRight: 'auto',
           }}
         >
-          Ready to explore items in 3D?
+          <strong>Ready to explore items in 3D?</strong> (complete a short survey to help us improve our product afterward!)
         </h3>
         <Link to="/survey">
         <button

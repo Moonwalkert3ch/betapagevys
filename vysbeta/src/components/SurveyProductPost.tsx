@@ -45,7 +45,7 @@ export default function SurveyProductPost() {
   return (
     <div style={{ padding: '1rem' }}>
       <h1 style={{ fontSize: '1.875rem', fontWeight: 'bold', marginBottom: '1.5rem', textAlign: 'center' }}>
-        Survey Product Showcase
+        Beta Product Solution Sample
       </h1>
 
       <div
