@@ -1,4 +1,5 @@
-// src/components/PhotoProductCard.tsx
+import { useState } from 'react';
+
 interface PhotoProductCardProps {
   imagePath: string;
   thumbnails: string[];
@@ -12,6 +13,8 @@ export default function PhotoProductCard({
   description,
   price,
 }: PhotoProductCardProps) {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div
       style={{
@@ -21,41 +24,40 @@ export default function PhotoProductCard({
         overflow: 'hidden',
         transition: 'transform 0.3s, box-shadow 0.3s',
         maxWidth: '350px',
-      }}
-      onMouseEnter={(e) => {
-        (e.currentTarget as HTMLDivElement).style.transform = 'scale(1.02)';
-        (e.currentTarget as HTMLDivElement).style.boxShadow = '0 6px 12px rgba(0,0,0,0.15)';
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLDivElement).style.transform = 'scale(1)';
-        (e.currentTarget as HTMLDivElement).style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+        position: 'relative',
       }}
     >
-      {/* Smaller Main Image */}
-      <div style={{ width: '100%', height: '160px', overflow: 'hidden' }}>
+      {/* Image with Overlay */}
+      <div style={{ position: 'relative', height: '180px', overflow: 'hidden' }}>
         <img
           src={imagePath}
           alt="product"
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+          }}
         />
-      </div>
-
-      {/* Smaller Thumbnails */}
-      <div style={{ display: 'flex', gap: '0.5rem', padding: '0.5rem' }}>
-        {thumbnails.map((thumb, i) => (
-          <img
-            key={i}
-            src={thumb}
-            alt={`thumbnail-${i}`}
+        {thumbnails.length > 1 && (
+          <div
+            onClick={() => setShowModal(true)}
             style={{
-              width: '50px',
-              height: '50px',
-              objectFit: 'cover',
+              position: 'absolute',
+              top: '80%',
+              left: '80%',
+              transform: 'translate(-50%, -50%)',
+              backgroundColor: 'rgba(0, 123, 255, 0.6)', // Blue film
+              color: '#fff',
+              fontSize: '1.25rem',
+              padding: '0.5rem 1rem',
               borderRadius: '0.5rem',
-              border: '1px solid #ddd',
+              cursor: 'pointer',
+              userSelect: 'none',
             }}
-          />
-        ))}
+          >
+            +{thumbnails.length}
+          </div>
+        )}
       </div>
 
       {/* Description and Price */}
@@ -63,6 +65,66 @@ export default function PhotoProductCard({
         <p style={{ margin: 0, color: '#333', fontSize: '0.9rem' }}>{description}</p>
         <p style={{ fontWeight: 'bold', marginTop: '0.5rem' }}>${price}</p>
       </div>
+
+      {/* Modal */}
+      {showModal && (
+        <>
+          <div
+            onClick={() => setShowModal(false)}
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              height: '100vh',
+              width: '100vw',
+              backgroundColor: 'rgba(0,0,0,0.5)',
+              zIndex: 1000,
+            }}
+          />
+          <div
+            style={{
+              position: 'fixed',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              backgroundColor: '#fff',
+              padding: '1rem',
+              borderRadius: '1rem',
+              zIndex: 1001,
+              maxWidth: '80vw',
+              maxHeight: '80vh',
+              overflowY: 'auto',
+              boxShadow: '0 8px 16px rgba(0,0,0,0.2)',
+            }}
+          >
+            <h3 style={{ marginBottom: '1rem' }}>Additional Views</h3>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+              {thumbnails.map((src, idx) => (
+                <img
+                  key={idx}
+                  src={src}
+                  alt={`Thumbnail ${idx}`}
+                  style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '0.5rem' }}
+                />
+              ))}
+            </div>
+            <button
+              onClick={() => setShowModal(false)}
+              style={{
+                marginTop: '1rem',
+                padding: '0.5rem 1rem',
+                backgroundColor: '#007bff',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '0.5rem',
+                cursor: 'pointer',
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 }
