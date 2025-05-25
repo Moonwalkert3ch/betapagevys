@@ -14,7 +14,7 @@ const products = [
   {
     videoPath: '/assets/videos/office-chair.mp4',
     imagePath: '/images/oc-fs.jpg',
-    thumbnails: ['/images/oc-bs.jpg', '/images/oc-lv.jpg','/images/oc-fs.jpg','/images/of-st.jpg'],
+    thumbnails: ['/images/oc-bs.jpg', '/images/oc-lv.jpg','/images/oc-fs.jpg'],
     description: 'Compact and durable for rugged use.',
     price: '65',
   },
