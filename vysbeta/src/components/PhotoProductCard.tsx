@@ -14,6 +14,12 @@ export default function PhotoProductCard({
   price,
 }: PhotoProductCardProps) {
   const [showModal, setShowModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const handleOpenModal = () => {
+    setSelectedImage(imagePath); // Set the main image as default
+    setShowModal(true);
+  };
 
   return (
     <div
@@ -40,13 +46,13 @@ export default function PhotoProductCard({
         />
         {thumbnails.length > 1 && (
           <div
-            onClick={() => setShowModal(true)}
+            onClick={handleOpenModal}
             style={{
               position: 'absolute',
               top: '80%',
               left: '80%',
               transform: 'translate(-50%, -50%)',
-              backgroundColor: 'rgba(0, 123, 255, 0.6)', // Blue film
+              backgroundColor: 'rgba(0, 123, 255, 0.6)',
               color: '#fff',
               fontSize: '1.25rem',
               padding: '0.5rem 1rem',
@@ -91,23 +97,49 @@ export default function PhotoProductCard({
               padding: '1rem',
               borderRadius: '1rem',
               zIndex: 1001,
-              maxWidth: '80vw',
-              maxHeight: '80vh',
+              maxWidth: '90vw',
+              maxHeight: '90vh',
               overflowY: 'auto',
               boxShadow: '0 8px 16px rgba(0,0,0,0.2)',
             }}
           >
             <h3 style={{ marginBottom: '1rem' }}>Additional Views</h3>
+
+            {/* Enlarged selected image */}
+            {selectedImage && (
+              <img
+                src={selectedImage}
+                alt="Selected"
+                style={{
+                  width: '100%',
+                  maxHeight: '400px',
+                  objectFit: 'contain',
+                  borderRadius: '0.5rem',
+                  marginBottom: '1rem',
+                }}
+              />
+            )}
+
+            {/* Thumbnails to choose from */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-              {thumbnails.map((src, idx) => (
+              {[imagePath, ...thumbnails].map((src, idx) => (
                 <img
                   key={idx}
                   src={src}
                   alt={`Thumbnail ${idx}`}
-                  style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '0.5rem' }}
+                  onClick={() => setSelectedImage(src)}
+                  style={{
+                    width: '100px',
+                    height: '100px',
+                    objectFit: 'cover',
+                    borderRadius: '0.5rem',
+                    cursor: 'pointer',
+                    border: selectedImage === src ? '2px solid #007bff' : 'none',
+                  }}
                 />
               ))}
             </div>
+
             <button
               onClick={() => setShowModal(false)}
               style={{

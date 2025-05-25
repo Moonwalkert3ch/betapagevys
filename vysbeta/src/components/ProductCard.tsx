@@ -55,7 +55,7 @@ export default function ProductCard({
       </div>
 
       {/* Image with Overlay */}
-      <div style={{ height: '120px', overflow: 'hidden', position: 'relative' }}>
+      <div style={{ height: '120px', overflow: 'hidden', position: 'relative', marginTop: '0.5rem' }}>
         <img
           src={imagePath}
           alt="product"
