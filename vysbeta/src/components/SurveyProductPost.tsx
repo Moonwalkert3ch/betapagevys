@@ -76,6 +76,30 @@ export default function SurveyProductPost() {
           </React.Fragment>
         ))}
       </div>
+
+      <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+  <a
+    href="https://docs.google.com/forms/d/e/1FAIpQLSer22RCinp1tA49SXPsFsbNDuH2aQUKKnqrlSW6kcw1ok0nSA/viewform?usp=sharing&ouid=101666015088557918298"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      display: 'inline-block',
+      padding: '0.75rem 1.5rem',
+      backgroundColor: '#007bff',
+      color: '#fff',
+      fontSize: '1rem',
+      fontWeight: 'bold',
+      borderRadius: '0.5rem',
+      textDecoration: 'none',
+      transition: 'background-color 0.3s',
+    }}
+    onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#0056b3')}
+    onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#007bff')}
+  >
+    Complete Survey
+  </a>
+</div>
+
     </div>
   );
 }
