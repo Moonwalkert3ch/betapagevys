@@ -134,8 +134,8 @@ const LandingPage: React.FC = () => {
           <ShoppingCartIcon />
           <span>VYS</span>
         </div>
-        <a
-          href="/survey"
+        <Link
+          to="/survey"
           style={{
             color: '#004AAD',
             textDecoration: 'none',
@@ -149,7 +149,7 @@ const LandingPage: React.FC = () => {
           onMouseOut={(e) => (e.currentTarget.style.color = '#004AAD')}
         >
           Surveys
-        </a>
+        </Link>
       </nav>
 
       {/* Hero Section */}
