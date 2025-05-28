@@ -2,13 +2,14 @@
 import React from 'react';
 import PhotoProductCard from './PhotoProductCard';
 import ProductCard from './ProductCard';
+import { Color } from 'three';
 
 const products = [
   {
     videoPath: '/assets/videos/accent-chair.mp4',
     imagePath: '/images/accent-fv-angle.jpg',
     thumbnails: ['/images/accent-fl.jpg', '/images/accent-fs-angle.jpg', '/images/ac-back.jpg'],
-    description: 'This is a great survey tool for field data.',
+    description: 'Item: Accent Chair. Dimensions: 30" x 30" x 35". Color: Off-white',
     price: '50',
   },
   {
@@ -47,6 +48,8 @@ export default function SurveyProductPost() {
       <h1 style={{ fontSize: '1.875rem', fontWeight: 'bold', marginBottom: '1.5rem', textAlign: 'center' }}>
         Beta Product Solution Sample
       </h1>
+
+      
 
       <div
         style={{

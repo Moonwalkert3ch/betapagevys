@@ -83,9 +83,22 @@ export default function ProductCard({
 
       {/* Description and Price */}
       <div style={{ padding: '1rem' }}>
-        <p style={{ margin: 0, color: '#333', fontSize: '0.9rem' }}>{description}</p>
-        <p style={{ fontWeight: 'bold', marginTop: '0.5rem' }}>${price}</p>
+        <h3 style={{ textAlign: 'center', textDecoration: 'underline', fontSize: '1rem', marginBottom: '0.5rem' }}>
+          Product Description
+        </h3>
+        <div style={{ maxHeight: '60px', overflowY: 'auto', fontSize: '0.85rem', color: '#333' }}>
+          {description
+            .split('.')
+            .filter(line => line.trim() !== '')
+            .map((sentence, idx) => (
+              <p key={idx} style={{ margin: '0.25rem 0' }}>
+                {sentence.trim()}.
+              </p>
+            ))}
+        </div>
+        <p style={{ fontWeight: 'bold', marginTop: '0.75rem', fontSize: '1rem' }}>${price}</p>
       </div>
+
 
       {/* Modal */}
       {showModal && (
