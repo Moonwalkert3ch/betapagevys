@@ -86,7 +86,7 @@ export default function ProductCard({
         <h3 style={{ textAlign: 'center', textDecoration: 'underline', fontSize: '1rem', marginBottom: '0.5rem' }}>
           Product Description
         </h3>
-        <div style={{ maxHeight: '60px', overflowY: 'auto', fontSize: '0.85rem', color: '#333' }}>
+        <div style={{ maxHeight: '90px', overflowY: 'auto', fontSize: '0.85rem', color: '#333' }}>
           {description
             .split('.')
             .filter(line => line.trim() !== '')
