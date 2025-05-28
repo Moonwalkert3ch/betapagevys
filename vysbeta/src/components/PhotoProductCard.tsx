@@ -42,6 +42,7 @@ export default function PhotoProductCard({
             width: '100%',
             height: '100%',
             objectFit: 'cover',
+            transition: 'transform 0.3s',
           }}
         />
         {thumbnails.length > 1 && (
@@ -103,7 +104,7 @@ export default function PhotoProductCard({
               boxShadow: '0 8px 16px rgba(0,0,0,0.2)',
             }}
           >
-            <h3 style={{ marginBottom: '1rem' }}>Additional Views</h3>
+            <h3 style={{ marginBottom: '1rem', fontWeight:'bold' }}>Additional Views</h3>
 
             {/* Enlarged selected image */}
             {selectedImage && (

@@ -19,6 +19,7 @@ export default function ProductCard({
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const handleOverlayClick = () => {
+    setSelectedImage(imagePath); // Set the main image as default
     setShowModal(true);
   };
 
@@ -32,14 +33,6 @@ export default function ProductCard({
         transition: 'transform 0.3s, box-shadow 0.3s',
         maxWidth: '350px',
         position: 'relative',
-      }}
-      onMouseEnter={(e) => {
-        (e.currentTarget as HTMLDivElement).style.transform = 'scale(1.02)';
-        (e.currentTarget as HTMLDivElement).style.boxShadow = '0 6px 12px rgba(0,0,0,0.15)';
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLDivElement).style.transform = 'scale(1)';
-        (e.currentTarget as HTMLDivElement).style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
       }}
     >
       {/* Smaller Video */}
@@ -71,15 +64,16 @@ export default function ProductCard({
             onClick={handleOverlayClick}
             style={{
               position: 'absolute',
-              bottom: '8px',
-              right: '8px',
-              backgroundColor: 'rgba(0, 98, 255, 0.8)',
-              color: 'white',
-              padding: '4px 8px',
-              borderRadius: '8px',
-              fontWeight: 'bold',
+              top: '80%',
+              left: '80%',
+              transform: 'translate(-50%, -50%)',
+              backgroundColor: 'rgba(0, 123, 255, 0.6)',
+              color: '#fff',
+              fontSize: '1.25rem',
+              padding: '0.5rem 1rem',
+              borderRadius: '0.5rem',
               cursor: 'pointer',
-              fontSize: '0.8rem',
+              userSelect: 'none',
             }}
           >
             +{thumbnails.length}
@@ -93,7 +87,7 @@ export default function ProductCard({
         <p style={{ fontWeight: 'bold', marginTop: '0.5rem' }}>${price}</p>
       </div>
 
-      {/* Thumbnail Modal */}
+      {/* Modal */}
       {showModal && (
         <>
           <div
@@ -118,31 +112,39 @@ export default function ProductCard({
               padding: '1rem',
               borderRadius: '1rem',
               zIndex: 1001,
-              maxWidth: '80vw',
-              maxHeight: '80vh',
+              maxWidth: '90vw',
+              maxHeight: '90vh',
               overflowY: 'auto',
               boxShadow: '0 8px 16px rgba(0,0,0,0.2)',
             }}
           >
-            <h3 style={{ marginBottom: '1rem', fontWeight: 'bold' }}>
-              Additional Views
-            </h3>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '0.5rem',
-                marginBottom: '1rem',
-              }}
-            >
-              {thumbnails.map((src, idx) => (
+            <h3 style={{ marginBottom: '1rem', fontWeight:'bold' }}>Additional Views</h3>
+
+            {/* Enlarged selected image */}
+            {selectedImage && (
+              <img
+                src={selectedImage}
+                alt="Selected"
+                style={{
+                  width: '100%',
+                  maxHeight: '400px',
+                  objectFit: 'contain',
+                  borderRadius: '0.5rem',
+                  marginBottom: '1rem',
+                }}
+              />
+            )}
+
+            {/* Thumbnails to choose from */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+              {[imagePath, ...thumbnails].map((src, idx) => (
                 <img
                   key={idx}
                   src={src}
                   alt={`Thumbnail ${idx}`}
                   onClick={() => setSelectedImage(src)}
                   style={{
-                    width: '100%',
+                    width: '100px',
                     height: '100px',
                     objectFit: 'cover',
                     borderRadius: '0.5rem',
@@ -152,74 +154,16 @@ export default function ProductCard({
                 />
               ))}
             </div>
+
             <button
               onClick={() => setShowModal(false)}
               style={{
-                backgroundColor: '#007bff',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '0.5rem',
-                padding: '0.5rem 1rem',
-                fontSize: '1rem',
-                cursor: 'pointer',
-              }}
-            >
-              Close
-            </button>
-          </div>
-        </>
-      )}
-
-      {/* Enlarged Image Viewer */}
-      {selectedImage && (
-        <>
-          <div
-            onClick={() => setSelectedImage(null)}
-            style={{
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              width: '100vw',
-              height: '100vh',
-              backgroundColor: 'rgba(0,0,0,0.7)',
-              zIndex: 1100,
-            }}
-          />
-          <div
-            style={{
-              position: 'fixed',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              zIndex: 1101,
-              backgroundColor: '#fff',
-              padding: '1rem',
-              borderRadius: '1rem',
-              maxWidth: '90%',
-              maxHeight: '80%',
-              boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
-              textAlign: 'center',
-            }}
-          >
-            <img
-              src={selectedImage}
-              alt="Enlarged view"
-              style={{
-                maxWidth: '100%',
-                maxHeight: '70vh',
-                borderRadius: '0.5rem',
-              }}
-            />
-            <button
-              onClick={() => setSelectedImage(null)}
-              style={{
                 marginTop: '1rem',
+                padding: '0.5rem 1rem',
                 backgroundColor: '#007bff',
                 color: '#fff',
                 border: 'none',
                 borderRadius: '0.5rem',
-                padding: '0.5rem 1rem',
-                fontSize: '1rem',
                 cursor: 'pointer',
               }}
             >
@@ -231,4 +175,3 @@ export default function ProductCard({
     </div>
   );
 }
-
