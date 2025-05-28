@@ -2,43 +2,43 @@
 import React from 'react';
 import PhotoProductCard from './PhotoProductCard';
 import ProductCard from './ProductCard';
-import { Color } from 'three';
+// import { Color } from 'three';
 
 const products = [
   {
     videoPath: '/assets/videos/accent-chair.mp4',
     imagePath: '/images/accent-fv-angle.jpg',
     thumbnails: ['/images/accent-fl.jpg', '/images/accent-fs-angle.jpg', '/images/ac-back.jpg'],
-    description: 'Item: Accent Chair. Dimensions: 30" x 30" x 35". Color: Off-white',
-    price: '50',
+    description: 'Item: Accent Chair. Dimensions: 27" x 27" x 34 inches". Color: Off-white. Features: Comfortable and stylish, perfect for any room. Material:Linen Fabric; Sponge; Wood. Maximum Load Weight: 440lbs. Assembly Required: Yes. Warranty: 1 year.',
+    price: '100',
   },
   {
     videoPath: '/assets/videos/office-chair.mp4',
     imagePath: '/images/oc-fs.jpg',
     thumbnails: ['/images/oc-bs.jpg', '/images/oc-lv.jpg','/images/oc-fs.jpg'],
-    description: 'Compact and durable for rugged use.',
+    description: 'Item: Office Chair. Dimensions: 24" x 24" x 36 inches". Color: Black. Features: Ergonomic design, adjustable height, swivel base. Material: Mesh; Steel; Plastic. Maximum Load Weight: 300lbs. Assembly Required: Yes. Warranty: 2 years.',
     price: '65',
   },
   {
     videoPath: '/assets/videos/puma-shoe.mp4',
     imagePath: '/images/ps-fv.jpg',
     thumbnails: ['/images/shoe-l-side.jpg', '/images/shoe-side.jpg', '/images/ps-pair.jpg'],
-    description: 'Lightweight and high precision.',
-    price: '45',
+    description: 'Item: Puma Shoe. Dimensions: 10" x 4" x 3 inches". Color: Black/White. Features: Lightweight, breathable mesh, cushioned sole. Material: Synthetic; Rubber. Maximum Load Weight: N/A. Assembly Required: No. Warranty: 6 months.',
+    price: '25',
   },
   {
     videoPath: '/assets/videos/wooden-chair.mp4',
     imagePath: '/images/dc-fs.jpg',
     thumbnails: ['/images/dc-b.jpg', '/images/dc-lv.jpg', '/images/dc-back.jpg'],
-    description: 'Ideal for topographic surveys.',
-    price: '70',
+    description: 'Item: Wooden Chair. Dimensions: 22" x 22" x 36 inches". Color: Natural Wood. Features: Classic design, sturdy construction, comfortable seating. Material: Solid Wood; Fabric Cushion. Maximum Load Weight: 350lbs. Assembly Required: Yes. Warranty: 1 year.',
+    price: '10',
   },
   {
     videoPath: '/assets/videos/stool-chair.mp4',
     imagePath: '/images/bar-fs.jpg',
     thumbnails: ['/images/bar-cushion.jpg', '/images/bc-s.jpg', '/images/bc-fv.jpg'],
-    description: 'User-friendly with advanced features.',
-    price: '60',
+    description: 'Item: Stool Chair. Dimensions: 18" x 18" x 30 inches". Color: Black. Features: Adjustable height, swivel seat, footrest. Material: Metal; Faux Leather. Maximum Load Weight: 250lbs. Assembly Required: Yes. Warranty: 1 year.',
+    price: '20',
   },
 ];
 
