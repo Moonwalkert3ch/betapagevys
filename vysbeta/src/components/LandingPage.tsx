@@ -135,7 +135,7 @@ const LandingPage: React.FC = () => {
           <span>VYS</span>
         </div>
         <a
-          href="/surveys"
+          href="/survey"
           style={{
             color: '#004AAD',
             textDecoration: 'none',
