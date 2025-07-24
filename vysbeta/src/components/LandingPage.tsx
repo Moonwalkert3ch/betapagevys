@@ -52,7 +52,6 @@ const LandingPage = () => {
         20% { color: orange; text-shadow: 0 0 5px orange; }
         40% { color: yellow; text-shadow: 0 0 5px yellow; }
         60% { color: green; text-shadow: 0 0 5px green; }
-        80% { color: blue; text-shadow: 0 0 5px blue; }
         100% { color: violet; text-shadow: 0 0 5px violet; }
       }
 
