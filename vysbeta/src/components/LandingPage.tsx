@@ -113,7 +113,7 @@ const LandingPage = () => {
       <section style={{ padding: '3rem 2rem', maxWidth: '64rem' }}>
         <SectionDivider
           text="Why Take the Survey?"
-          fontSize="2rem"
+          fontSize="3rem"
           color="#4B0082"
         />
         <img
