@@ -132,8 +132,8 @@ export default function SurveyProductPost() {
             textDecoration: 'none',
             transition: 'background-color 0.3s',
           }}
-          onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#0056b3')}
-          onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#A1C9FF')}
+          onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#A1C9FF')}
+          onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#0056b3')}
         >
           Complete Survey
         </a>
