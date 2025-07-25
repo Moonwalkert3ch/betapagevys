@@ -118,7 +118,7 @@ export default function SurveyProductPost() {
       {/* Survey Button */}
       <div style={{ textAlign: 'center', marginTop: '3rem' }}>
         <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSer22RCinp1tA49SXPsFsbNDuH2aQUKKnqrlSW6kcw1ok0nSA/viewform?usp=sharing&ouid=101666015088557918298"
+          href="https://forms.gle/C3yVneC498tSvChp9"
           target="_blank"
           rel="noopener noreferrer"
           style={{
