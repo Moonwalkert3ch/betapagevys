@@ -22,6 +22,30 @@ export default function PhotoProductCard({
   };
 
   return (
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '0.5rem',
+      margin: '0.5rem',
+    }}
+  >
+    {/* Label A */}
+    <div
+      style={{
+        fontSize: '1.5rem',
+        fontWeight: 'bold',
+        color: '#4B0082',
+        backgroundColor: '#A1C9FF',
+        padding: '0.25rem 0.75rem',
+        borderRadius: '1rem',
+        boxShadow: '0 1px 4px rgba(0,0,0,0.1)',
+        transition: 'transform 0.3s',
+      }}
+    >
+      A
+    </div>
     <div
       style={{
         backgroundColor: '#fff',
@@ -41,8 +65,9 @@ export default function PhotoProductCard({
           style={{
             width: '100%',
             height: '100%',
-            objectFit: 'cover',
+            objectFit: 'contain',
             transition: 'transform 0.3s',
+            paddingTop: '0.5rem', 
           }}
         />
         {thumbnails.length > 1 && (
@@ -50,8 +75,8 @@ export default function PhotoProductCard({
             onClick={handleOpenModal}
             style={{
               position: 'absolute',
-              top: '80%',
-              left: '80%',
+              top: '85%',
+              left: '65%',
               transform: 'translate(-50%, -50%)',
               backgroundColor: 'rgba(0, 123, 255, 0.6)',
               color: '#fff',
@@ -171,5 +196,6 @@ export default function PhotoProductCard({
         </>
       )}
     </div>
+  </div>
   );
 }
