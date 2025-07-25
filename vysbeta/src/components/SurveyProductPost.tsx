@@ -124,8 +124,8 @@ export default function SurveyProductPost() {
           style={{
             display: 'inline-block',
             padding: '0.75rem 1.5rem',
-            backgroundColor: '#4B0082',
-            color: '#4B0082',
+            backgroundColor: '#0056b3',
+            color: 'A1C9FF',
             fontSize: '1rem',
             fontWeight: 'bold',
             borderRadius: '999rem',
