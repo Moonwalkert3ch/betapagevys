@@ -124,16 +124,16 @@ export default function SurveyProductPost() {
           style={{
             display: 'inline-block',
             padding: '0.75rem 1.5rem',
-            backgroundColor: '#0056b3',
-            color: 'A1C9FF',
+            backgroundColor: '#A1C9FF',
+            color: '#4B0082',
             fontSize: '1rem',
             fontWeight: 'bold',
             borderRadius: '999rem',
             textDecoration: 'none',
             transition: 'background-color 0.3s',
           }}
-          onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#A1C9FF')}
-          onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#0056b3')}
+          onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#0056b3')}
+          onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#A1C9FF')}
         >
           Complete Survey
         </a>
